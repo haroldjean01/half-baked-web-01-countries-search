@@ -44,6 +44,7 @@ button {
     display: grid;
     align-content: space-between;
     justify-items: center;
+    margin: 20px;
 }
 
 .card img {
