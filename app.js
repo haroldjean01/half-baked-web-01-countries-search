@@ -54,13 +54,14 @@ function displayCountries() {
     for (const country of countries) {
         // Slice A: Call imported render countries function and append to list
         const countryEl = renderCountry(country);
+        countryList.append(countryEl);
     }
 }
 
 function displayContinentOptions() {
     for (const continent of continents) {
         // Slice B: Call continent render function and append to continent selector
-        const option = renderContinentOption(continent);
-        continentSelect.append(option);
+        const continentSelect = renderContinentOption(continent);
+        continentSelect.append(continent);
     }
 }
