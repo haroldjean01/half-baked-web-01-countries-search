@@ -39,3 +39,28 @@ async function findCountries(continent) {
     // Slice A: call displayCountries function;
     displayCountries();
 }
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+    // Slice C: Call findCountries with continent from formData
+    findCountries(formData.get('continent'));
+});
+
+/* Display Functions */
+function displayCountries() {
+    //Slice A: reset the countries List
+    countryList.innerHTML = '';
+    for (const country of countries) {
+        // Slice A: Call imported render countries function and append to list
+        const countryEl = renderCountry(country);
+    }
+}
+
+function displayContinentOptions() {
+    for (const continent of continents) {
+        // Slice B: Call continent render function and append to continent selector
+        const option = renderContinentOption(continent);
+        continentSelect.append(option);
+    }
+}
